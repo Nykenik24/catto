@@ -10,4 +10,4 @@ Get a cat from https://cataas.com and show the cat in the terminal using chafa
 ## build with build.sh
 ## install with install.sh
 
-# Leave a start if you love cats!
+# Leave a star if you love cats!
