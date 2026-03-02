@@ -26,12 +26,22 @@ static size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, voi
 	return realsize;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 	CURL *curl;
 	CURLcode res;
 	struct MemoryStruct chunk;
 	FILE *fp;
 	char cmd[512];
+
+  if (argc < 2) {
+    printf("Usage:\n");
+    printf("  %s <url>\n", argv[0]);
+    exit(1);
+  }
+
+  char url[512];
+  snprintf(url, sizeof(url), "https://cataas.com/cat/%s?width=400&height=300", argv[1]);
+  url[strlen(url) + 1] = '\0';
 
 	chunk.memory = malloc(1);
 	chunk.size = 0;
@@ -40,7 +50,7 @@ int main() {
 	curl = curl_easy_init();
 
 	if(curl) {
-		curl_easy_setopt(curl, CURLOPT_URL, "https://cataas.com/cat/cute?width=400&height=300");
+		curl_easy_setopt(curl, CURLOPT_URL, url);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
 		curl_easy_setopt(curl, CURLOPT_USERAGENT, "cat-fetcher/1.0");
