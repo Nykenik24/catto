@@ -8,9 +8,10 @@ Get a cat from https://cataas.com and show the cat in the terminal using chafa
 ## instructions
 - build with build.sh
 - install with install.sh
-- type `catto <tag>`
+- type `catto` or `catto -t <tag>`
 - enjoy!
-<img width="1090" height="837" alt="image" src="https://github.com/user-attachments/assets/0cf49626-e5ef-4fd9-a80e-162afbb7f341" />
+<img width="1091" height="832" alt="image" src="https://github.com/user-attachments/assets/18604b6b-c667-4460-9544-2669ba1e894e" />
+
 
 
 # Leave a star if you love cats!
