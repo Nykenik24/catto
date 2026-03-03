@@ -56,12 +56,6 @@ static char doc[] = "catto -- fetch cat from cataas.com";
 
 static struct argp argp = {options, parse_opt, args_doc, doc};
 
-int usage(char *argv[]) {
-  printf("Usage:\n");
-  printf("  %s <tag>\n", argv[0]);
-  return 1;
-}
-
 struct MemoryStruct {
   unsigned char *memory;
   size_t size;
